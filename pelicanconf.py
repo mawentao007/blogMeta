@@ -7,7 +7,7 @@ SITENAME = u'Marvin\'s Blog'
 
 PATH = 'content'
 
-TIMEZONE = 'Asia/Chongqing'
+TIMEZONE = 'Asia/Hong_Kong'
 
 DEFAULT_LANG = u'en'
 
@@ -16,11 +16,14 @@ DEFAULT_LANG = u'en'
 TEMPLATE_PAGES = {'blog.html': 'blog.html'}
 DEFAULT_PAGINATION = True
 PAGINATED_DIRECT_TEMPLATES = ('blog-index',)
+STATIC_PATHS = ['images', 'extra/CNAME']
 DIRECT_TEMPLATES = ('categories', 'index', 'blog-index', 'blog','archives')
 POST_LIMIT = 6
 #ARTICLES_HOME_PAGE = 'blog-index'
 
 
+DEFAULT_DATE_FORMAT = ('%d/%b/%Y %a')
+ARTICLE_SAVE_AS = "{date:%Y}/{date:%m}/{slug}/index.html"
 # Feed generation is usually not desired when developing
 #FEED_ALL_ATOM = None
 #CATEGORY_FEED_ATOM = None
