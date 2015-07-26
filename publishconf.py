@@ -18,7 +18,7 @@ RELATIVE_URLS = False
 
 DELETE_OUTPUT_DIRECTORY = True
 
-LINKS = (('Archives', 'http://scalaboy.top/archives.html'),)
+#LINKS = (('Archives', 'http://scalaboy.top/archives.html'),)
 
 
 # Following items are often useful when publishing

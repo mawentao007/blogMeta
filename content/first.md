@@ -3,4 +3,3 @@ Date: 2015-7-25
 Category: 随笔
 
 Marvin的博客
-粟小样是个笨瓜。

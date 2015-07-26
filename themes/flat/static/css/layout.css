@@ -457,4 +457,18 @@ footer a.toTop {
   ul.bstrap-tabs li {
     margin-bottom:1px;
   }
+
+
 }
+  
+span.archive-date{
+    text-align:left;
+    float:right;
+    background:url("../img/dotted-border.png") bottom left repeat-x;
+    color:#8eb6cb;
+  }
+
+.archive-content{
+    width:800px;
+}
+

@@ -27,12 +27,12 @@
             {% if ARTICLES_HOME_PAGE %}
             <li><a href="{{SITEURL}}/">Blog</a></li>
             <li><a href="{{SITEURL}}/about.html#about">About</a></li>
-            <!--li><a href="{{SITEURL}}/about.html#about">Work</a></li-->
+            <!--li><a href="{{SITEURL}}/about.html#about">#可以直接索引到相关section</a></li-->
           <!-- Otherwise, use the theme defaults. -->
           {% else %}
             <li><a href="{{SITEURL}}/blog.html">Home</a></li>
-            <li><a href="{{SITEURL}}/index.html#about">About</a></li>
-            <li><a href="{{SITEURL}}/archives.html">Archives</a></li>
+            <li><a href="{{SITEURL}}/index.html">About</a></li>
+            <li><a href="{{SITEURL}}/archives.html">Archives</a></li-->
             {% if WORK_DESCRIPTION %}
             <li><a href="{{SITEURL}}/index.html#work">Work</a></li>
             {% endif %}

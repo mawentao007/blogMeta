@@ -9,12 +9,14 @@ PATH = 'content'
 
 TIMEZONE = 'Asia/Chongqing'
 
-DEFAULT_LANG = u'ch'
+DEFAULT_LANG = u'en'
+
+#ARCHIVE_LIST=True
 
 TEMPLATE_PAGES = {'blog.html': 'blog.html'}
 DEFAULT_PAGINATION = True
 PAGINATED_DIRECT_TEMPLATES = ('blog-index',)
-DIRECT_TEMPLATES = ('categories', 'index', 'blog-index', 'blog')
+DIRECT_TEMPLATES = ('categories', 'index', 'blog-index', 'blog','archives')
 POST_LIMIT = 6
 #ARTICLES_HOME_PAGE = 'blog-index'
 
