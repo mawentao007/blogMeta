@@ -23,7 +23,7 @@ POST_LIMIT = 6
 
 
 DEFAULT_DATE_FORMAT = ('%d/%b/%Y %a')
-ARTICLE_SAVE_AS = "{date:%Y}/{date:%m}/{slug}/index.html"
+#ARTICLE_SAVE_AS = "{date:%Y}/{date:%m}/{slug}/index.html"
 # Feed generation is usually not desired when developing
 #FEED_ALL_ATOM = None
 #CATEGORY_FEED_ATOM = None
