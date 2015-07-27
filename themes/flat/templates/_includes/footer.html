@@ -7,8 +7,12 @@
   <div class="container">
 
     <div class="row">
+        <div class="col-md-4 text-left">
+              <br />Thanks To <a class="theme_link" href="http://docs.getpelican.com/" target="_blank">Pelican</a> For Generator
+              <br />and <a class="theme_link" href="https://github.com/KenMercusLai/BT3-Flat" target="_blank">Ken Lai</a> For Theme
+        </div>
 
-        <div class="col-md-6 copyright">
+        <div class="col-md-4 text-center copyright">
             {{ SITENAME|e }}
             {% if COPYRIGHT %}
             <br />{{ COPYRIGHT }}
@@ -17,7 +21,7 @@
             {% endif %}
         </div>
 
-        <div class="col-md-6 text-right">
+        <div class="col-md-4 text-right">
             {% for group_title, group_link in SOCIAL %}
               <a href="{{group_link}}" class="social fa fa-{{group_title|lower}}" target="_blank"></a>
             {% endfor %}
