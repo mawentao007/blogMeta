@@ -19,6 +19,7 @@ PAGINATED_DIRECT_TEMPLATES = ('blog-index',)
 STATIC_PATHS = ['images', 'extra/CNAME']
 DIRECT_TEMPLATES = ('categories', 'index', 'blog-index', 'blog','archives')
 POST_LIMIT = 6
+
 #ARTICLES_HOME_PAGE = 'blog-index'
 
 
@@ -52,3 +53,8 @@ DEFAULT_PAGINATION = 10
 THEME = "./themes/flat"
 
 
+PLUGIN_PATHS = ["tag_cloud", "./plugins/tag-cloud"]
+PLUGINS = ["tag_cloud"]
+TAG_CLOUD_SORTING = 'random'
+TAG_CLOUD_STEPS = 4
+TAG_CLOUD_MAX_ITEMS = 100

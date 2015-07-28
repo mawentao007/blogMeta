@@ -135,6 +135,19 @@
                 </ul>
             {%- endif -%}
           </div>
+          <div class="widget">
+            <h3>Tags</h3>
+           <ul>
+            {% for tag in tag_cloud %}
+             <span class="tag-{{ tag.1 }}">
+              <a class="sidebar-tag" href="{{ SITEURL }}/{{ tag.0.url }}">
+              <i class=" fa fa-tag fa-fw fa-lg"></i>{{ tag.0 }}
+              </a>
+             </span>
+            {% endfor %}
+          </ul>
+
+            </div>
 
         </div>
         <!-- /SIDEBAR -->

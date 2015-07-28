@@ -135,6 +135,17 @@ a:hover {
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #1000FF, 0 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
+pre {
+    padding: 10px;
+    background-color: #111;
+    color: #fff;
+    line-height: 1.2em;
+    border: 1px solid #C6C9CB;
+    font-size: 1.1em;
+    margin: 1.5em 0 1.5em 0;
+    -webkit-box-shadow: 1px 1px 1px #d8d8d8;
+    -moz-box-shadow: 1px 1px 1px #d8d8d8;
+}
 /**
   span.archive-date{
      text-align:left;                                                                                                   

@@ -28,6 +28,7 @@
 }
 .container {
   position:relative;
+  width:70%;
 }
 .label {
   display:inline-block;
@@ -473,7 +474,12 @@ span.archive-date{
 }
 
 .article_main_area{
-    width: 66%;
+    width: 70%;
     margin-top:100px;
+}
+
+.sidebar-tag{
+  color:#666;
+
 }
 
