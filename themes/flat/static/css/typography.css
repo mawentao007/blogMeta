@@ -18,7 +18,7 @@
   color: #333;
   background:#fff;
   font-family:'Open Sans', sans-serif;
-  font-size: 17px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 300;
   padding: 0px !important;
@@ -105,7 +105,7 @@ section ul, section ul li {
 }
 p {
   margin:0;
-  padding:10px 0;
+  padding:1px 0;
   line-height:26px;
 }
 header p {
