@@ -80,7 +80,7 @@ section header h1, section header h2, section header h3 {
   color:#0F1113;
 }
 section {
-  background:#ffffff;
+  background:#f2f2f2;
 }
 section.arrow-down {
   background:#ffffff url('../images/down_white.png') no-repeat top center
@@ -470,5 +470,10 @@ span.archive-date{
 
 .archive-content{
     width:800px;
+}
+
+#article_main_area{
+    width: 90%;
+    padding-left: 10%;
 }
 

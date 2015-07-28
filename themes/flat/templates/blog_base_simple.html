@@ -1,0 +1,19 @@
+{% include "_includes/header.html" %}
+
+<body>
+
+  {% include "_includes/nav.html" %}
+  <section id="blog">
+    <article class="container">
+        <div id="article_main_area">
+          {% block content_area %} {% endblock %}
+        </div>
+    </article>
+  </section>
+  <!-- /BLOG -->
+
+  {% include "_includes/footer.html" %}
+
+</body>
+
+</html>

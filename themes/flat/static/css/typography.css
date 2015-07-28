@@ -15,10 +15,10 @@
 /** 01. Typography
  **************************************************************** **/
  body {
-  color: #666;
+  color: #333;
   background:#fff;
   font-family:'Open Sans', sans-serif;
-  font-size: 19px;
+  font-size: 17px;
   font-style: normal;
   font-weight: 300;
   padding: 0px !important;
