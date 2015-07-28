@@ -1,5 +1,12 @@
 #Marvin的blog
+
+Thanks to
+---
 [Pelican](http://docs.getpelican.com/en/3.6.0/quickstart.html)
+
+Blog address
+---
+[scalaboy.top](http://scalaboy.top)
 Install
 ---
 
