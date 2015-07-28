@@ -5,9 +5,9 @@
   <!-- article title -->
   <header>
     {% if article.link %}
-      <a href="{{ article.link }}" rel="bookmark" title="External Link to {{ article.title|striptags|e }}"><h1>{{ article.title }} <i class="fa fa-external-link"></i></h1></a>
+      <a href="{{ article.link }}" rel="bookmark" title="External Link to {{ article.title|striptags|e }}"><h3>{{ article.title }} <i class="fa fa-external-link"></i></h3></a>
     {% else %}
-      <h1>{{ article.title }}</h1>
+      <h3>{{ article.title }}</h3>
     {% endif %}
     <small class="fsize13">
       {% if article.category %}

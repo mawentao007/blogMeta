@@ -25,6 +25,7 @@
  html, body {
   overflow-x:hidden;
   overflow-x:hidden;
+  background:#f2f2f2;
 }
 .container {
   position:relative;
@@ -80,9 +81,7 @@ div.divider {
 section header h1, section header h2, section header h3 {
   color:#0F1113;
 }
-section {
-  background:#f2f2f2;
-}
+
 section.arrow-down {
   background:#ffffff url('../images/down_white.png') no-repeat top center
 }
