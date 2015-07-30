@@ -62,3 +62,12 @@ span.archive-date{
   dd{
   	margin-top:10px;
   }
+
+.about-h2 {
+  margin-bottom: 20px;
+
+}
+
+section ul li .about {
+  margin-right:10px;
+}
