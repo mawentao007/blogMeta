@@ -15,13 +15,13 @@
                 <li><i class="about fa fa-dot-circle-o"></i>邮箱: $ echo bWF3ZW50YW9Ad2h1LmVkdS5jbgo= | base64 -d</li>
         </ul>
     </section>
-{% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
+
     <div class="comments">
       <div id="disqus_thread"></div>
       <script type="text/javascript">
         var disqus_shortname = '{{ DISQUS_SITENAME }}';
-        var disqus_identifier = '{{ article.url }}';
-        var disqus_url = '{{ SITEURL }}/{{ article.url }}';
+        var disqus_identifier = 'about.html';
+        var disqus_url = '{{ SITEURL }}/about.html';
         (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//{{ DISQUS_SITENAME }}.disqus.com/embed.js';
@@ -30,7 +30,7 @@
       </script>
       <noscript>Please enable JavaScript to view the comments.</noscript>
     </div>
-{% endif %}
+
 
 
 </div>
