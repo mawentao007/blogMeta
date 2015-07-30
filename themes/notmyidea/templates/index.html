@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content_title %}{% endblock %}
+{% block content %}
+<div class="container">
+<div class="row">
+
+{% if articles %}
+    {% for article in articles_page.object_list %}
+ 
+            {% if loop.first %}
+                <section id="content" class="left col-md-9">
+                   
+            {% endif %}
+            <div class="item"><article class="hentry">
+                <header>
+                    <h2><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
+                           title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2>
+                </header>
+
+                <div class="entry-content">
+                {% include 'article_infos.html' %}
+                {{ article.summary }}
+                <a class="btn btn-xs theme_link" href="{{ SITEURL }}/{{ article.url }}">
+                    <i class="fa fa-sign-out"></i>read more</a>
+                {% include 'comments.html' %}
+                </div><!-- /.entry-content -->
+            </article></div>
+             
+        
+        {% if loop.last %}
+         
+            {% if articles_page.has_previous() or loop.length > 1 %}
+                {% include 'pagination.html' %}
+            {% endif %}
+            {% if loop.length > 1 %}
+                </section><!-- /#content -->
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+{% else %}
+<section id="content" class="body">
+<h2>Pages</h2>
+    {% for page in PAGES %}
+        <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+    {% endfor %}
+</section>
+{% endif %}
+{% include "_includes/sidebar.html" %}
+
+</div>
+</div>
+{% endblock content %}

@@ -1,0 +1,1 @@
+/home/marvin/Blog/blogMeta/pelicanconf.py

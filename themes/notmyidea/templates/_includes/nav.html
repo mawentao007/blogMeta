@@ -1,0 +1,50 @@
+<!-- Main Nav -->
+<header id="header" style="margin-top:0">
+
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+    <a href="https://github.com/mawentao007"><img style="position: fixed; top: 10; right: 0; border: 5;" alt="Fork me on GitHub" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+
+      <!-- Mobile Menu Button -->
+      <!--button id="mobileMenu" class="fa fa-bars" type="button" data-toggle="collapse" data-target=".navbar-collapse"></button-->
+
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <a class="navbar-brand" href="{{SITEURL}}/index.html">
+          <!--img src="{{ HEADER_IMAGE }}" alt="" width="50" height="50" /-->
+          <span class="hidden-xs">{{ SITENAME|e }}</span>
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+   
+
+        <ul class="nav navbar-nav navbar-right">
+          <!-- If the user wants to make articles the home page then remove blog link, and make about and work links point to old home page. -->
+       
+          <li><a href="{{SITEURL}}/index.html">Home</a></li>
+          <li><a href="{{SITEURL}}/about.html">About</a></li>
+          <li><a href="{{SITEURL}}/archives.html">Archives</a></li-->
+                 <!-- Fullscreen Button - Unavailable for IE -->
+          <li><a href="#" class="btn-fullscreen"><i class="fa fa-external-link" ></i></a><li>
+      
+          {% if LINKS %}
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Links <b class="caret"></b></a>
+              <ul class="dropdown-menu" style="background-color:#000">
+              {% for site_title, site_link in LINKS %}
+                <li style="background-color:#000"><a href="{{site_link}}" target="_blank">{{site_title}}</a></li>
+              {% endfor %}
+              </ul>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+
+    </div>
+  </nav>
+</header>
+<!-- /Main Nav -->

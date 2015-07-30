@@ -1,0 +1,64 @@
+.widget ul li {
+  margin:10px 0;
+  list-style:none;
+}
+
+.widget ul{
+  list-style:none;
+  margin:0;
+  padding:0 0 0 20px;
+}
+
+.widget h3 {
+  margin-bottom:20px;
+}
+
+.widget ul li a i {
+  padding-right:8px;
+}
+
+
+
+
+.item h2 {
+  margin:0;
+}
+
+form input[type="text"], #blog form input[type="password"], #blog form input[type="email"], #blog form input[type="phone"], #blog form textarea {
+  width:100%;
+}
+
+.widget {
+  margin-bottom:70px;
+}
+
+
+.btn {
+  margin:0;
+}
+
+
+.container a.label, span.label {
+  font-weight: 400;
+}
+
+#content li{
+	list-style:none;
+	margin-top:50px;
+
+}
+
+i {
+	margin-right:10px;
+}
+
+span.archive-date{
+    text-align:left;
+    float:right;
+    background:url("../images/dotted-border.png") bottom left repeat-x;
+    color:#8eb6cb;
+  }
+
+  dd{
+  	margin-top:10px;
+  }
