@@ -35,6 +35,7 @@ a:hover {
   background:#0F1113;
   position:relative;
   color:#AAAE99;
+  padding-top: 18px;
 }
 
 .pagination>li>a{
