@@ -71,7 +71,7 @@
           <ul>
               {% for article in month.list %}
                   <li style="display: none;">
-                      <a class="theme_link" href="{{ SITEURL }}/{{url }}">
+                      <a class="theme_link" href="{{ SITEURL }}/{{article.url }}">
                       <small>{{article.date}}</small>{{article.title}}</a>
                   </li>
               {% endfor %}
