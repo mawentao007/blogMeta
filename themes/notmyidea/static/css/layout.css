@@ -23,3 +23,22 @@
 .archive-content{
 	width:60%;
 }
+
+footer a.toTop {
+  position:absolute;
+  left:50%;
+  top:-23px;
+  margin-left:-20px;
+  background:rgba(0, 0, 0, 0.5);
+  padding:10px 16px;
+  bottom:0;
+  font-size:23px;
+  z-index:100;
+  color:#fff;
+  -webkit-border-top-right-radius: 9px;
+  -webkit-border-top-left-radius: 9px;
+  -moz-border-radius-topright: 9px;
+  -moz-border-radius-topleft: 9px;
+  border-top-right-radius: 9px;
+  border-top-left-radius: 9px;
+}
