@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>Marvin's Blog - </title>
+    <meta name="description" content="" />
+    <meta name="Author" content="Ken M. Lai(networktsukkomime.me)" />
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="http://stepofweb.gweb.io/.templates/IsisOne/HTML/assets/plugins/lt-ie9/html5.js"></script>
+    <script type="text/javascript" src="http://stepofweb.gweb.io/.templates/IsisOne/HTML/assets/plugins/lt-ie9/respond.min.js"></script>
+    <script type="text/javascript" src="http://stepofweb.gweb.io/.templates/IsisOne/HTML/assets/plugins/lt-ie9/excanvas.compiled.js"></script>
+    <![endif]-->
+
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800|Dosis:300,400" rel="stylesheet" type="text/css" />
+
+
+    <!-- CORE CSS FRAMEWORK -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <!-- CSS TEMPLATE -->
+    <link href="/theme/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="/theme/css/framework.css" rel="stylesheet" type="text/css" />
+    <link href="/theme/css/typography.css" rel="stylesheet" type="text/css" />
+    <link href="/theme/css/layout.css" rel="stylesheet" type="text/css" />
+    <link href="/theme/css/tag.css" rel="stylesheet" type="text/css" />
+
+    <link href="/theme/css/blog.css" rel="stylesheet" type="text/css" />
+
+    <!-- ICONS -->
+
+    <!-- mobile settings -->
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+
+    <!-- Morenizr -->
+    <script type="text/javascript" src="/theme/js/modernizr.min.js"></script>
+
+    <!-- google authorship -->
+</head>
+<body>
+
+<!-- Main Nav -->
+<header id="header" style="margin-top:0">
+
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+    <a href="https://github.com/mawentao007"><img style="position: fixed; top: 10; right: 0; border: 5;" alt="Fork me on GitHub" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobileMenu" class="fa fa-bars" type="button" data-toggle="collapse" data-target=".navbar-collapse"></button>
+
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/blog.html">
+          <!--img src="" alt="" width="50" height="50" /-->
+          <span class="hidden-xs">Marvin&#39;s Blog</span>
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <!-- Fullscreen Button - Unavailable for IE -->
+        <!--a href="#" class="btn-fullscreen"><i class="fa fa-external-link" ></i></a-->
+
+        <ul class="nav navbar-nav navbar-right">
+          <!-- If the user wants to make articles the home page then remove blog link, and make about and work links point to old home page. -->
+            <li><a href="/blog.html">Home</a></li>
+            <li><a href="/index.html">About</a></li>
+            <li><a href="/archives.html">Archives</a></li-->
+            <!--li><a href="/blog.html">Blog</a></li-->
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+
+    </div>
+  </nav>
+</header>
+<!-- /Main Nav -->  <article class="container">
+
+  </article>
+  <div class="container article_main_area">
+  <!-- article title -->
+  <header>
+      <h3>Java NIO-9 教程</h3>
+    <small class="fsize13">
+            <a href="/category/java.html" rel="tag tooltip" class="label label-default light" data-placement="right" data-original-title="10 articles in this category"><i class="fa fa-dot-circle-o"></i> JAVA</a>
+      <!--a href="\{\{ SITEURL }}/\{\{article.url}}#disqus_thread" class="scrollTo label label-default light" data-disqus-identifier="\{\{article.url}}"><i class="fa fa-comment-o"></i> ?? Comments</a-->
+      <span class="label label-default light">29/ 7月/2015 三</span> 
+    </small>
+  </header>
+
+  <article class='content'>
+    <p>Java NIO(New IO)是Java API中一个可选的IO接口，可以用来作为标准Java IO和Java网络接口之外的一个选择方案。Java NIO提供一个不同和标准IO不同的IO方式。</p>
+<h2>Java NIO：通道和缓冲区</h2>
+<p>在标准的IO API中，通信是以字节流或者字符流来进行的。而在NIO中则需要和通道（channel）以及缓冲区（buffers）打交道。数据通常由通道读入缓冲区，或者由缓冲区写入通道。</p>
+<h2>Java NIO：非阻塞IO</h2>
+<p>Java支持非阻塞模式的IO。例如，一个线程可以请求通道将数据读入缓冲区，而当通道在将数据读入缓冲区的同时，线程可以转头去做其它工作。一旦数据被完全读入缓冲区，线程可以再回来继续处理。将数据写入通道的操作模式也类似。</p>
+<h2>Java NIO：Selectors</h2>
+<p>Java NIO包含“选择器”（selectors）的概念。一个选择器是一个可以监控多个通道事件（连接打开，数据到达等）的对象。通过这种方式，一个线程可以监控多个通道内的数据。</p>
+  </article>
+
+  <div class="divider"><!-- lines divider --></div>
+
+  <!-- SOCIAL -->
+ 
+  
+
+  <!-- TAGS -->
+  <p class="fsize16"> Tags:
+        <a href="/tag/java.html" rel="tooltip" class="label label-default light" data-placement="right" data-original-title="10 articles with this tag"><i class="fa fa-tags"></i> JAVA</a>
+        <a href="/tag/nio.html" rel="tooltip" class="label label-default light" data-placement="right" data-original-title="10 articles with this tag"><i class="fa fa-tags"></i> NIO</a>
+        <a href="/tag/jiao-cheng.html" rel="tooltip" class="label label-default light" data-placement="right" data-original-title="10 articles with this tag"><i class="fa fa-tags"></i> 教程</a>
+  </p>
+
+  <hr /><!-- divider -->
+
+  </div>
+  <!-- /BLOG -->
+
+<!-- FOOTER -->
+<footer>
+
+  <!-- SCROOL TO TOP -->
+  <a href="#toTop" class="fa fa-arrow-up toTop"></a>
+
+  <div class="container">
+
+    <div class="row">
+        <div class="col-md-4 text-left">
+              <br />Thanks To <a class="theme_link" href="http://docs.getpelican.com/" target="_blank">Pelican</a> For Generator
+              <br />and <a class="theme_link" href="https://github.com/KenMercusLai/BT3-Flat" target="_blank">Ken Lai</a> For Theme
+        </div>
+
+        <div class="col-md-4 text-center copyright">
+            Marvin&#39;s Blog
+            <br />2015 &copy; All Rights Reserved.
+        </div>
+
+        <div class="col-md-4 text-right">
+              <a href="http://weibo.com/p/1005051799756001" class="social fa fa-weibo" target="_blank"></a>
+              <a href="https://github.com/mawentao007" class="social fa fa-github" target="_blank"></a>
+        </div>
+
+    </div>
+
+  </div>
+</footer>
+<!-- /FOOTER -->
+
+
+
+<!-- CORE FILES -->
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/theme/js/jquery.isotope.js"></script>
+<script type="text/javascript" src="/theme/js/masonry.js"></script>
+
+<!-- PLUGINS -->
+<script type="text/javascript" src="/theme/js/jquery.fitvids.min.js"></script>
+<script type="text/javascript" src="/theme/js/jquery.appear.js"></script>
+<script type="text/javascript" src="/theme/js/jquery.superslides.min.js"></script>
+<script type="text/javascript" src="/theme/js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="/theme/js/jquery.carouFredSel-6.2.1-packed.js"></script>
+<script type="text/javascript" src="/theme/js/jquery.countTo.js"></script>
+<script type="text/javascript" src="/theme/js/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript" src="/theme/js/holder.js"></script>
+<!-- delete on production -->
+
+<!-- js scripts -->
+<script async type="text/javascript" src="/theme/js/scripts.js"></script>
+
+<script type="text/javascript" src="/theme/js/ImageAutoResize.js"></script>
+<script type="text/javascript" src="/theme/js/application.js"></script>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Marvin's Blog</title><link>/</link><description></description><atom:link href="/feeds/marvin.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 29 Jul 2015 00:00:00 +0800</lastBuildDate><item><title>Java NIO-1 教程</title><link>/java-nio-1-jiao-cheng.html</link><description>&lt;p&gt;Java NIO(New IO)是Java API中一个可选的IO接口，可以用来作为标准Java IO和Java网络接口之外的一个选择方案。Java NIO提供一个不同和标准IO不同的IO方式。&lt;/p&gt;
+&lt;h4&gt;Java NIO：通道和缓冲区&lt;/h4&gt;
+&lt;p&gt;在标准的IO API中，通信是以字节流或者字符流来进行的。而在NIO中则需要和通道（channel）以及缓冲区（buffers）打交道。数据通常由通道读入缓冲区，或者由缓冲区写入通道。&lt;/p&gt;
+&lt;h4&gt;Java NIO：非阻塞IO&lt;/h4&gt;
+&lt;p&gt;Java支持非阻塞模式的IO。例如，一个线程可以请求通道将数据读入缓冲区，而当通道在将数据读入缓冲区的同时，线程可以转头去做其它工作。一旦数据被完全读入缓冲区，线程可以再回来继续处理。将数据写入通道的操作模式也类似。&lt;/p&gt;
+&lt;h4&gt;Java NIO：Selectors&lt;/h4&gt;
+&lt;p&gt;Java NIO包含“选择器”（selectors）的概念。一个选择器是一个可以监控多个通道事件（连接打开，数据到达等）的对象。通过这种方式，一个线程可以监控多个通道内的数据。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Marvin</dc:creator><pubDate>Wed, 29 Jul 2015 00:00:00 +0800</pubDate><guid>tag:,2015-07-29:java-nio-1-jiao-cheng.html</guid><category>NIO</category><category>教程</category><category>JAVA</category></item><item><title>Java NIO-2 概述</title><link>/java-nio-2-gai-shu.html</link><description>&lt;p&gt;Java NIO包含如下核心组件：
++ 通道
++ 缓冲区
++ 选择器&lt;/p&gt;
+&lt;p&gt;Java NIO除了这写还有很多类和组件，但是我认为这三者是API的核心。其它组件，例如管道（Pipe）和文件锁（FileLock）等仅仅是辅助联结这三个核心组件进行工作的工具类。因此，我将会在本章重点讲这三个组件。其它组件将会在其它章节涉及。&lt;/p&gt;
+&lt;h2&gt;通道和缓冲区&lt;/h2&gt;
+&lt;p&gt;所有的IO和NIO都是由通道开始。一个通道就像一个流。数据可以从通道读入缓冲区，也可以由缓冲区写入通道。下图是一个简单描述：
+&lt;img alt="" src="http://scalaboy.top/blogPicture/overview-channels-buffers.png" /&gt;&lt;/p&gt;
+&lt;h6&gt;&amp;ensp;&amp;ensp;Java NIO：通道读数据到缓冲区，缓冲区写数据到通道&lt;/h6&gt;
+&lt;p&gt;通道和缓冲区有很多类型。如下列举了Java NIO实现的一些初级通道类型：
++ FileChannel
++ DatagramChannel
++ SocketChannel
++ ServerSocketChannel&lt;/p&gt;
+&lt;p&gt;不难看出，这些通道的类型覆盖了UDP+TCP网络IO，还有文件IO
+如下是Java NIO中实现的核心缓冲区的列表：
++ ByteBuffer
++ CharBuffer
++ DoubleBuffer
++ FloatBuffer
++ IntBuffer
++ LongBuffer
++ ShortBuffer&lt;/p&gt;
+&lt;p&gt;这些缓冲区覆盖了IO中可以利用的数据的基本类型：byte，short，int，long，float，double和characters。
+Java NIO也有MappedByteBuffer，可以结合内存映射文件使用。这部分将会留到介绍缓冲区的章节。&lt;/p&gt;
+&lt;h2&gt;选择器&lt;/h2&gt;
+&lt;p&gt;通过选择器可以实现单个线程处理多个通道事件。如果你的应用存在同时有多个连接打开，而每个连接的通信量不大的情况，那么这将会带来巨大便利。例如，你的应用是聊天程序。
+如下是单个线程利用选择器处理处理三个通道的示意图：
+&lt;img alt="" src="http://scalaboy.top/blogPicture/overview-selectors.png" /&gt;&lt;/p&gt;
+&lt;h6&gt;&amp;ensp;&amp;ensp;Java NIO：单线程利用选择器处理多通道&lt;/h6&gt;
+&lt;p&gt;首先要注册通道到选择器，之后通过调用select()开始工作。这个方法将会阻塞线程直到某个已经注册的通道完成工作并触发事件。一旦方法返回，线程就可以着手处理这些事件。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Marvin</dc:creator><pubDate>Wed, 29 Jul 2015 00:00:00 +0800</pubDate><guid>tag:,2015-07-29:java-nio-2-gai-shu.html</guid><category>NIO</category><category>教程</category><category>JAVA</category></item><item><title>Java NIO-3 教程</title><link>/java-nio-3-jiao-cheng.html</link><description>&lt;p&gt;Java NIO(New IO)是Java API中一个可选的IO接口，可以用来作为标准Java IO和Java网络接口之外的一个选择方案。Java NIO提供一个不同和标准IO不同的IO方式。&lt;/p&gt;
+&lt;h2&gt;Java NIO：通道和缓冲区&lt;/h2&gt;
+&lt;p&gt;在标准的IO API中，通信是以字节流或者字符流来进行的。而在NIO中则需要和通道（channel）以及缓冲区（buffers）打交道。数据通常由通道读入缓冲区，或者由缓冲区写入通道。&lt;/p&gt;
+&lt;h2&gt;Java NIO：非阻塞IO&lt;/h2&gt;
+&lt;p&gt;Java支持非阻塞模式的IO。例如，一个线程可以请求通道将数据读入缓冲区，而当通道在将数据读入缓冲区的同时，线程可以转头去做其它工作。一旦数据被完全读入缓冲区，线程可以再回来继续处理。将数据写入通道的操作模式也类似。&lt;/p&gt;
+&lt;h2&gt;Java NIO：Selectors&lt;/h2&gt;
+&lt;p&gt;Java NIO包含“选择器”（selectors）的概念。一个选择器是一个可以监控多个通道事件（连接打开，数据到达等）的对象。通过这种方式，一个线程可以监控多个通道内的数据。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Marvin</dc:creator><pubDate>Wed, 29 Jul 2015 00:00:00 +0800</pubDate><guid>tag:,2015-07-29:java-nio-3-jiao-cheng.html</guid><category>NIO</category><category>教程</category><category>JAVA</category></item><item><title>Java NIO-4 教程</title><link>/java-nio-4-jiao-cheng.html</link><description>&lt;p&gt;Java NIO(New IO)是Java API中一个可选的IO接口，可以用来作为标准Java IO和Java网络接口之外的一个选择方案。Java NIO提供一个不同和标准IO不同的IO方式。&lt;/p&gt;
+&lt;h2&gt;Java NIO：通道和缓冲区&lt;/h2&gt;
+&lt;p&gt;在标准的IO API中，通信是以字节流或者字符流来进行的。而在NIO中则需要和通道（channel）以及缓冲区（buffers）打交道。数据通常由通道读入缓冲区，或者由缓冲区写入通道。&lt;/p&gt;
+&lt;h2&gt;Java NIO：非阻塞IO&lt;/h2&gt;
+&lt;p&gt;Java支持非阻塞模式的IO。例如，一个线程可以请求通道将数据读入缓冲区，而当通道在将数据读入缓冲区的同时，线程可以转头去做其它工作。一旦数据被完全读入缓冲区，线程可以再回来继续处理。将数据写入通道的操作模式也类似。&lt;/p&gt;
+&lt;h2&gt;Java NIO：Selectors&lt;/h2&gt;
+&lt;p&gt;Java NIO包含“选择器”（selectors）的概念。一个选择器是一个可以监控多个通道事件（连接打开，数据到达等）的对象。通过这种方式，一个线程可以监控多个通道内的数据。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Marvin</dc:creator><pubDate>Wed, 29 Jul 2015 00:00:00 +0800</pubDate><guid>tag:,2015-07-29:java-nio-4-jiao-cheng.html</guid><category>NIO</category><category>教程</category><category>JAVA</category></item><item><title>Java NIO-5 教程</title><link>/java-nio-5-jiao-cheng.html</link><description>&lt;p&gt;Java NIO(New IO)是Java API中一个可选的IO接口，可以用来作为标准Java IO和Java网络接口之外的一个选择方案。Java NIO提供一个不同和标准IO不同的IO方式。&lt;/p&gt;
+&lt;h2&gt;Java NIO：通道和缓冲区&lt;/h2&gt;
+&lt;p&gt;在标准的IO API中，通信是以字节流或者字符流来进行的。而在NIO中则需要和通道（channel）以及缓冲区（buffers）打交道。数据通常由通道读入缓冲区，或者由缓冲区写入通道。&lt;/p&gt;
+&lt;h2&gt;Java NIO：非阻塞IO&lt;/h2&gt;
+&lt;p&gt;Java支持非阻塞模式的IO。例如，一个线程可以请求通道将数据读入缓冲区，而当通道在将数据读入缓冲区的同时，线程可以转头去做其它工作。一旦数据被完全读入缓冲区，线程可以再回来继续处理。将数据写入通道的操作模式也类似。&lt;/p&gt;
+&lt;h2&gt;Java NIO：Selectors&lt;/h2&gt;
+&lt;p&gt;Java NIO包含“选择器”（selectors）的概念。一个选择器是一个可以监控多个通道事件（连接打开，数据到达等）的对象。通过这种方式，一个线程可以监控多个通道内的数据。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Marvin</dc:creator><pubDate>Wed, 29 Jul 2015 00:00:00 +0800</pubDate><guid>tag:,2015-07-29:java-nio-5-jiao-cheng.html</guid><category>NIO</category><category>教程</category><category>JAVA</category></item><item><title>Java NIO-6 教程</title><link>/java-nio-6-jiao-cheng.html</link><description>&lt;p&gt;Java NIO(New IO)是Java API中一个可选的IO接口，可以用来作为标准Java IO和Java网络接口之外的一个选择方案。Java NIO提供一个不同和标准IO不同的IO方式。&lt;/p&gt;
+&lt;h2&gt;Java NIO：通道和缓冲区&lt;/h2&gt;
+&lt;p&gt;在标准的IO API中，通信是以字节流或者字符流来进行的。而在NIO中则需要和通道（channel）以及缓冲区（buffers）打交道。数据通常由通道读入缓冲区，或者由缓冲区写入通道。&lt;/p&gt;
+&lt;h2&gt;Java NIO：非阻塞IO&lt;/h2&gt;
+&lt;p&gt;Java支持非阻塞模式的IO。例如，一个线程可以请求通道将数据读入缓冲区，而当通道在将数据读入缓冲区的同时，线程可以转头去做其它工作。一旦数据被完全读入缓冲区，线程可以再回来继续处理。将数据写入通道的操作模式也类似。&lt;/p&gt;
+&lt;h2&gt;Java NIO：Selectors&lt;/h2&gt;
+&lt;p&gt;Java NIO包含“选择器”（selectors）的概念。一个选择器是一个可以监控多个通道事件（连接打开，数据到达等）的对象。通过这种方式，一个线程可以监控多个通道内的数据。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Marvin</dc:creator><pubDate>Wed, 29 Jul 2015 00:00:00 +0800</pubDate><guid>tag:,2015-07-29:java-nio-6-jiao-cheng.html</guid><category>NIO</category><category>教程</category><category>JAVA</category></item><item><title>Java NIO-7 教程</title><link>/java-nio-7-jiao-cheng.html</link><description>&lt;p&gt;Java NIO(New IO)是Java API中一个可选的IO接口，可以用来作为标准Java IO和Java网络接口之外的一个选择方案。Java NIO提供一个不同和标准IO不同的IO方式。&lt;/p&gt;
+&lt;h2&gt;Java NIO：通道和缓冲区&lt;/h2&gt;
+&lt;p&gt;在标准的IO API中，通信是以字节流或者字符流来进行的。而在NIO中则需要和通道（channel）以及缓冲区（buffers）打交道。数据通常由通道读入缓冲区，或者由缓冲区写入通道。&lt;/p&gt;
+&lt;h2&gt;Java NIO：非阻塞IO&lt;/h2&gt;
+&lt;p&gt;Java支持非阻塞模式的IO。例如，一个线程可以请求通道将数据读入缓冲区，而当通道在将数据读入缓冲区的同时，线程可以转头去做其它工作。一旦数据被完全读入缓冲区，线程可以再回来继续处理。将数据写入通道的操作模式也类似。&lt;/p&gt;
+&lt;h2&gt;Java NIO：Selectors&lt;/h2&gt;
+&lt;p&gt;Java NIO包含“选择器”（selectors）的概念。一个选择器是一个可以监控多个通道事件（连接打开，数据到达等）的对象。通过这种方式，一个线程可以监控多个通道内的数据。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Marvin</dc:creator><pubDate>Wed, 29 Jul 2015 00:00:00 +0800</pubDate><guid>tag:,2015-07-29:java-nio-7-jiao-cheng.html</guid><category>NIO</category><category>教程</category><category>JAVA</category></item><item><title>Java NIO-8 教程</title><link>/java-nio-8-jiao-cheng.html</link><description>&lt;p&gt;Java NIO(New IO)是Java API中一个可选的IO接口，可以用来作为标准Java IO和Java网络接口之外的一个选择方案。Java NIO提供一个不同和标准IO不同的IO方式。&lt;/p&gt;
+&lt;h2&gt;Java NIO：通道和缓冲区&lt;/h2&gt;
+&lt;p&gt;在标准的IO API中，通信是以字节流或者字符流来进行的。而在NIO中则需要和通道（channel）以及缓冲区（buffers）打交道。数据通常由通道读入缓冲区，或者由缓冲区写入通道。&lt;/p&gt;
+&lt;h2&gt;Java NIO：非阻塞IO&lt;/h2&gt;
+&lt;p&gt;Java支持非阻塞模式的IO。例如，一个线程可以请求通道将数据读入缓冲区，而当通道在将数据读入缓冲区的同时，线程可以转头去做其它工作。一旦数据被完全读入缓冲区，线程可以再回来继续处理。将数据写入通道的操作模式也类似。&lt;/p&gt;
+&lt;h2&gt;Java NIO：Selectors&lt;/h2&gt;
+&lt;p&gt;Java NIO包含“选择器”（selectors）的概念。一个选择器是一个可以监控多个通道事件（连接打开，数据到达等）的对象。通过这种方式，一个线程可以监控多个通道内的数据。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Marvin</dc:creator><pubDate>Wed, 29 Jul 2015 00:00:00 +0800</pubDate><guid>tag:,2015-07-29:java-nio-8-jiao-cheng.html</guid><category>NIO</category><category>教程</category><category>JAVA</category></item><item><title>Java NIO-9 教程</title><link>/java-nio-9-jiao-cheng.html</link><description>&lt;p&gt;Java NIO(New IO)是Java API中一个可选的IO接口，可以用来作为标准Java IO和Java网络接口之外的一个选择方案。Java NIO提供一个不同和标准IO不同的IO方式。&lt;/p&gt;
+&lt;h2&gt;Java NIO：通道和缓冲区&lt;/h2&gt;
+&lt;p&gt;在标准的IO API中，通信是以字节流或者字符流来进行的。而在NIO中则需要和通道（channel）以及缓冲区（buffers）打交道。数据通常由通道读入缓冲区，或者由缓冲区写入通道。&lt;/p&gt;
+&lt;h2&gt;Java NIO：非阻塞IO&lt;/h2&gt;
+&lt;p&gt;Java支持非阻塞模式的IO。例如，一个线程可以请求通道将数据读入缓冲区，而当通道在将数据读入缓冲区的同时，线程可以转头去做其它工作。一旦数据被完全读入缓冲区，线程可以再回来继续处理。将数据写入通道的操作模式也类似。&lt;/p&gt;
+&lt;h2&gt;Java NIO：Selectors&lt;/h2&gt;
+&lt;p&gt;Java NIO包含“选择器”（selectors）的概念。一个选择器是一个可以监控多个通道事件（连接打开，数据到达等）的对象。通过这种方式，一个线程可以监控多个通道内的数据。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Marvin</dc:creator><pubDate>Wed, 29 Jul 2015 00:00:00 +0800</pubDate><guid>tag:,2015-07-29:java-nio-9-jiao-cheng.html</guid><category>NIO</category><category>教程</category><category>JAVA</category></item><item><title>Java NIO 前言</title><link>/java-nio-qian-yan.html</link><description>&lt;p&gt;在网上看到一篇很不错的Java NIO的教程，相信google过的同学都看到过，地址：http://tutorials.jenkov.com/java-nio/index.html。&lt;/p&gt;
+&lt;p&gt;我想翻译过来，方便日后学习同时可以自己增加一些理解。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Marvin</dc:creator><pubDate>Wed, 29 Jul 2015 00:00:00 +0800</pubDate><guid>tag:,2015-07-29:java-nio-qian-yan.html</guid><category>NIO</category><category>教程</category><category>JAVA</category></item><item><title>程序员修炼之道-前言</title><link>/cheng-xu-yuan-xiu-lian-zhi-dao-qian-yan.html</link><description>&lt;p&gt;最近在读《程序员修炼之道》书很轻巧易懂，但是很多观点的确让人茅塞顿开。&lt;/p&gt;
+&lt;p&gt;写下这个系列，记录自己的读书心得，指导日后学习生活。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Marvin</dc:creator><pubDate>Tue, 28 Jul 2015 00:00:00 +0800</pubDate><guid>tag:,2015-07-28:cheng-xu-yuan-xiu-lian-zhi-dao-qian-yan.html</guid><category>读书笔记</category><category>程序员修炼之道</category></item><item><title>琐话</title><link>/suo-hua.html</link><description>&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;花了两天把这个博客搭好了，是该认真分享点东西了。&lt;/p&gt;
+&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;Evernote也会随时记笔记，而且效果还不错。但是毕竟是自己看的，遇到一些难度大一点的东西，整理起来就不够细心，效果也就差不少。&lt;/p&gt;
+&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;中文资料相对较少，尤其是一些国外兴起不久的技术。希望能把自己接触到的东西，自己的理解整理分享出来。&lt;/p&gt;
+&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;开工！&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Marvin</dc:creator><pubDate>Mon, 27 Jul 2015 00:00:00 +0800</pubDate><guid>tag:,2015-07-27:suo-hua.html</guid><category>博客</category><category>随笔</category></item></channel></rss>

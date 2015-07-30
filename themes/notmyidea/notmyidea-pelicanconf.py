@@ -16,7 +16,7 @@ DIRECT_TEMPLATES = ('about','categories', 'index','archives')
 
 ARTICLES_HOME_PAGE = 'index'
 
-SUMMARY_MAX_LENGTH = 10
+SUMMARY_MAX_LENGTH = 15
 
 
 DEFAULT_DATE_FORMAT = ('%d/%b/%Y %a')
@@ -43,7 +43,7 @@ TAG_CLOUD_MAX_ITEMS = 100
 
 
 
-DEFAULT_PAGINATION = 8
+DEFAULT_PAGINATION = 3
 
 
 
