@@ -104,13 +104,14 @@ section ul, section ul li {
 p {
   margin-top:18px;
   padding:1px 0;
-  line-height:26px;
+  line-height:30px;
 }
 header p {
   padding:0;
 }
 section {
   padding:100px 0;
+  
 }
 section header p {
   margin:0;
@@ -118,6 +119,7 @@ section header p {
 }
 section article {
   margin-bottom:40px;
+
 }
 section article:last-child {
   margin-bottom:0;
@@ -185,6 +187,7 @@ a:hover {
 
 }
 
-.placeHolder{
-  height:100px;
-}
+
+
+
+ 
