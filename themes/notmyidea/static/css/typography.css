@@ -99,7 +99,7 @@ section ul, section ul li {
  **************************************************************** **/
  header {
   margin:0 0 15px 0;
-  text-transform:uppercase;
+/**  text-transform:uppercase; **/
 }
 p {
   margin-top:18px;
@@ -125,7 +125,10 @@ section article:last-child {
   margin-bottom:0;
 }
 pre {
+  color: #fff;
+  background: #242A2D;
   margin:20px 0;
+  font-size:15px;
 }
 /** 03. Responsive
  **************************************************************** **/
