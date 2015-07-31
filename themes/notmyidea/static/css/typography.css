@@ -74,9 +74,9 @@ blockquote p {
 /* quote */
  hr {
   border:0;
-  border-bottom:#fff 1px solid;
-  border-top:#ddd 1px solid;
-  margin-bottom:60px;
+  border-bottom:#968D8D 2px solid;
+  border-top:#CBBABA 1px solid;
+  margin-bottom:30px;
 }
 /* ---------- SECTION ---------- */
  footer, section {
