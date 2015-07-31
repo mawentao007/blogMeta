@@ -4,9 +4,11 @@ Category: 技术文章
 Tags:NIO,教程,JAVA
 
 Java NIO通道和流在很多方面比较相似，但是还是有一些区别：
-+ 你可以向一个通道中写入或者读出数据，但是流只能单向操作（读或者写）
-+ 通道支持异步读写
-+ 通道总是和Buffer同时出现
+
+- 你可以向一个通道中写入或者读出数据，但是流只能单向操作（读或者写）
+- 通道支持异步读写
+- 通道总是和Buffer同时出现
+
 正如上面提到的，你可以从通道中读取数据到缓冲区中，也可以将缓冲区中的数据写入通道。下图是一个简单描述：
 
 ![1](http://scalaboy.top/blogPicture/overview-channels-buffers.png)
@@ -16,6 +18,7 @@ Java NIO通道和流在很多方面比较相似，但是还是有一些区别：
 **通道的实现**
 
 Java NIO中有几种最重要的通道实现：
+
 + FileChannel
 + DatagramChannel
 + SocketChannel
