@@ -1,6 +1,6 @@
 Title: Java NIO-1 教程
 Date: 2015-7-29 
-Category: JAVA
+Category: 技术文章
 Tags:NIO,教程,JAVA
 
 Java NIO(New IO)是Java API中一个可选的IO接口，可以用来作为标准Java IO和Java网络接口之外的一个选择方案。Java NIO提供一个不同和标准IO不同的IO方式。

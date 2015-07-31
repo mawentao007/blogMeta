@@ -1,14 +1,60 @@
-Title: Java NIO-3 教程
+Title: Java NIO-3 Channel
 Date: 2015-7-29 
-Category: JAVA
+Category: 技术文章
 Tags:NIO,教程,JAVA
 
-Java NIO(New IO)是Java API中一个可选的IO接口，可以用来作为标准Java IO和Java网络接口之外的一个选择方案。Java NIO提供一个不同和标准IO不同的IO方式。
+Java NIO通道和流在很多方面比较相似，但是还是有一些区别：
 
-##Java NIO：通道和缓冲区
-在标准的IO API中，通信是以字节流或者字符流来进行的。而在NIO中则需要和通道（channel）以及缓冲区（buffers）打交道。数据通常由通道读入缓冲区，或者由缓冲区写入通道。
++ 你可以向一个通道中写入或者读出数据，但是流只能单向操作（读或者写）
++ 通道支持异步读写
++ 通道总是和Buffer同时出现
 
-##Java NIO：非阻塞IO
-Java支持非阻塞模式的IO。例如，一个线程可以请求通道将数据读入缓冲区，而当通道在将数据读入缓冲区的同时，线程可以转头去做其它工作。一旦数据被完全读入缓冲区，线程可以再回来继续处理。将数据写入通道的操作模式也类似。
-##Java NIO：Selectors
-Java NIO包含“选择器”（selectors）的概念。一个选择器是一个可以监控多个通道事件（连接打开，数据到达等）的对象。通过这种方式，一个线程可以监控多个通道内的数据。
+正如上面提到的，你可以从通道中读取数据到缓冲区中，也可以将缓冲区中的数据写入通道。下图是一个简单描述：
+
+![1](http://scalaboy.top/blogPicture/overview-channels-buffers.png)
+
+**&ensp;&ensp;Java NIO：通道读数据到缓冲区，缓冲区写数据到通道**
+
+**通道的实现**
+
+Java NIO中有几种最重要的通道实现：
+
++ FileChannel
++ DatagramChannel
++ SocketChannel
++ ServerSocketChannel
+
+*FileChannel* 负责读写文件。
+
+*DatagramChannel* 利用UDP协议读写数据。
+
+*SocketChannel* 利用TCP协议读写数据。
+
+*ServerSocketChannel* 允许你监听TCP连接，正如web服务器所做的那样。对于每个进入的连接会相应创建一个SocketChannel。
+
+**简单的例子**
+```	
+    RandomAccessFile aFile = new RandomAccessFile("data/nio-data.txt", "rw");
+    FileChannel inChannel = aFile.getChannel();
+
+    ByteBuffer buf = ByteBuffer.allocate(48);
+
+    int bytesRead = inChannel.read(buf);
+    while (bytesRead != -1) {
+
+      System.out.println("Read " + bytesRead);
+      buf.flip();
+
+      while(buf.hasRemaining()){
+          System.out.print((char) buf.get());
+      }
+
+      buf.clear();
+      bytesRead = inChannel.read(buf);
+    }
+    aFile.close();
+```
+注意其中的buf.flip()调用。首先将数据读入Buffer，之后flip，然后将数据读出。
+
+
+

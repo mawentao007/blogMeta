@@ -1,6 +1,6 @@
 Title:Scala Array Pattern Matching问题
 Date: 2015-7-31 
-Category: Scala
+Category: 技术文章
 Tags:Scala,Array,Pattern Matching
 
 问题如下：给出两个整数队列，合并并排序。
