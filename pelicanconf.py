@@ -42,5 +42,10 @@ TAG_CLOUD_MAX_ITEMS = 100
 
 DEFAULT_PAGINATION = 8
 
+#直接将该目录下的文件拷贝到output目录
+#注意路径是相对content目录的！
+#STATIC_PATHS = "./images"
+STATIC_PATHS = ['images',]
+
 
 
