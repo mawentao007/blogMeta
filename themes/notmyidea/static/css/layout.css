@@ -14,7 +14,7 @@
   -webkit-box-shadow: 0px 0px 15px 1px rgba(50, 50, 50, 1); 
   -moz-box-shadow: 0px 0px 15px 1px rgba(50, 50, 50, 1);
   box-shadow: 0px 0px 15px 1px rgba(50, 50, 50, 1);
-  background:rgba(210, 219, 219, 0.29);
+  background: url(../images/bg-site.gif) repeat top left fixed;
   padding-left: 5.5%;
   padding-right:5.5%;
   margin-bottom:20px;

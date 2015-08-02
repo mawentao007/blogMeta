@@ -11,7 +11,7 @@ Java NIO通道和流在很多方面比较相似，但是还是有一些区别：
 
 正如上面提到的，你可以从通道中读取数据到缓冲区中，也可以将缓冲区中的数据写入通道。下图是一个简单描述：
 <p align="center">
-<img class="embeded-img" src="http://scalaboy.top/images/overview-channels-buffers.png">
+<img class="embeded-img" src="./images/overview-channels-buffers.png">
 </p>
 <p align="center">
 **Java NIO：通道读数据到缓冲区，缓冲区写数据到通道**

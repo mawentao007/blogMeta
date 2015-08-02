@@ -15,7 +15,7 @@ Java NIO除了这写还有很多类和组件，但是我认为这三者是API的
 
 所有的IO和NIO都是由通道开始。一个通道就像一个流。数据可以从通道读入缓冲区，也可以由缓冲区写入通道。下图是一个简单描述：
 <p align="center">
-    <img src="http://scalaboy.top/images/overview-channels-buffers.png" />
+    <img src="./images/overview-channels-buffers.png" />
 </p>
 <p align="center">
 **Java NIO：通道读数据到缓冲区，缓冲区写数据到通道**
@@ -45,7 +45,7 @@ Java NIO也有MappedByteBuffer，可以结合内存映射文件使用。这部�
 通过选择器可以实现单个线程处理多个通道事件。如果你的应用存在同时有多个连接打开，而每个连接的通信量不大的情况，那么这将会带来巨大便利。例如，你的应用是聊天程序。
 如下是单个线程利用选择器处理处理三个通道的示意图：
 <p align="center">
-    <img src="http://scalaboy.top/images/overview-selectors.png" />
+    <img src="./images/overview-selectors.png" />
 </p>
 <p align="center">
 **Java NIO：单线程利用选择器处理多通道**
