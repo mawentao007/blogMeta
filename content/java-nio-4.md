@@ -56,10 +56,10 @@ aFile.close();
 
 下面有一个例子来讲解这三个属性在不同模式下的意义：
 <p align="center">
-	<img class=embeded-img src="{{SITEURL}}/images/buffer-modes.png">
+	<img class=embeded-img src="./images/buffers-modes.png">
 </p>
 <p align="center">
-==capacity,position和limit在读写模式下的含义==
+**capacity,position和limit在读写模式下的含义**
 </p>
 
 **Capacity**
@@ -121,8 +121,44 @@ aFile.close();
 **rewind()**
 
 *Buffer.rewind()*方法设置*position*为0，不改变*limit*的值。
-****
-http://tutorials.jenkov.com/java-nio/buffers.html
+
+**clear()和compact()**
+
+一旦完成从缓冲区读取数据，在进行写入之前，必须调用*clear()*或者*compact()*来清理缓冲区。
+
+*clear()*将*position*设置为0，将*limit*设置为*capacity*的值。换句话说，整个缓冲区被清空。但是事实上缓冲区的数据并没有没清理掉，只是改变了相应的标志，将缓冲区存在数据的部分也视为可写。在写入的时候会进行覆盖。
+
+如果缓冲区中有未被读取过的数据，而用户需要在将来某一个时刻继续读取，但是在之前要进行写入操作，那么就要使用*compact()*。
+
+*compact()*将所有未读数据写入缓冲区的开始部分，之后将position设置为紧跟最后一个未读数据的内存单元。*limit*属性依旧是*capacity*值。这时可以继续进行写入，而且未读取的值不会被覆盖。
+
+**mark()和reset()**
+
+用户可以通过调用*Buffer.mark()*标记一个位置，之后可以通过调用*Buffer.reset()*将*position*设置为标记的位置。下面是一个例子：
+
+	buffer.mark();
+    //call buffer.get() a couple of times, e.g. during parsing.
+    buffer.reset();  //set position back to mark.    
+
+**equals()和compareTo()**
+可以通过*equals()*和*compareTo()*来比较两个缓冲区。
+
+满足如下条件则两个缓冲区是*equals*:
+
++	相同类型
++	有同样数量的剩余数据量
++	所有剩余的数据是相等的
+
+这个方法只比较一部分缓冲区，而不是缓冲区的每个内存元素。事实上它只比较缓冲区剩余的内存元素。
+
+*compareTo()*方法比较两个缓冲区剩余的元素，在某些场景使用，例如排序。满足如下条件则视为一个缓冲区小于另一个：
+
++	缓冲区中之前的元素和另一个缓冲区对应位置的元素一样，而当前元素比另一个缓冲区的小。
++	两个缓冲区对应位置所有元素一样，但是第一个缓冲区元素较少。
+
+通过上述比较可以发现，这个方法和字符串的比较很相似。
+
+
 
 
 
