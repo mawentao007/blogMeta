@@ -1,7 +1,8 @@
  html, body {
   overflow-x:hidden;
   overflow-x:hidden;
-  background:#ac7c5d url(../images/body-bg.jpg);
+  background:#000000 url(../images/body-bg-dark.jpg);
+  background-repeat: no-repeat;
 }
 .container {
   position:relative;
