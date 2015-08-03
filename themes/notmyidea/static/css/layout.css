@@ -1,7 +1,7 @@
  html, body {
   overflow-x:hidden;
   overflow-x:hidden;
-  background:#f2f2f2;
+  background:#ffffff;
 }
 .container {
   position:relative;
@@ -10,11 +10,22 @@
 }
 
 .shadow-container{
-  width:72%;
+  width:70%;
   -webkit-box-shadow: 0px 0px 15px 1px rgba(50, 50, 50, 1); 
   -moz-box-shadow: 0px 0px 15px 1px rgba(50, 50, 50, 1);
   box-shadow: 0px 0px 15px 1px rgba(50, 50, 50, 1);
-  background: url(../images/content-bg-1.png) repeat top;
+  background: url(../images/content-bg.png) repeat top;
+  padding-left: 5.5%;
+  padding-right:5.5%;
+  margin-bottom:20px;
+}
+
+.shadow-container-index{
+  width:70%;
+  -webkit-box-shadow: 0px 0px 15px 1px rgba(50, 50, 50, 1); 
+  -moz-box-shadow: 0px 0px 15px 1px rgba(50, 50, 50, 1);
+  box-shadow: 0px 0px 15px 1px rgba(50, 50, 50, 1);
+  background: url(../images/content-bg-index.png) repeat top;
   padding-left: 5.5%;
   padding-right:5.5%;
   margin-bottom:20px;
@@ -23,7 +34,7 @@
 
 .sidebar{
 	  padding-top: 100px;
-    padding-left: 40px;
+    padding-left: 30px;
 }
 
 .section{
