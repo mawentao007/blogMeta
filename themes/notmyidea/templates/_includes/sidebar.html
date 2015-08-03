@@ -67,12 +67,12 @@
   <ul>
       <li>
           {% for month in group.list|groupby('month')|sort(reverse=True) %}
-          <span><i class="fa fa-plus-square-o"></i>{{month.grouper}}</span>
+          <span class="archive-span"><i class="fa fa-plus-square-o"></i>{{month.grouper}}</span>
           <ul>
               {% for article in month.list %}
-                  <li style="display: none;">
-                      <a class="theme_link" href="{{ SITEURL }}/{{article.url }}">
-                      <small>{{article.date}}</small>{{article.title}}</a>
+                  <li class="archive-sidebar-li" style="display: none;">
+                      <a class="theme_link archive-sidebar" href="{{ SITEURL }}/{{article.url }}">
+                      {{article.title}}</a>
                   </li>
               {% endfor %}
           </ul>

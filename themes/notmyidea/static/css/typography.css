@@ -152,6 +152,10 @@ a,.theme_link{
   color:#666;
 }
 
+.archive-sidebar{
+  font-size:small;
+  margin-right: -10px;
+}
 a:hover {
   color:#4FB6C8;
 }

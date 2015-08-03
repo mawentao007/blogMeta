@@ -80,7 +80,7 @@ footer a.toTop {
 
 .widget ul{
   list-style:none;
-  margin:0;
+  margin-bottom:10px;
   padding:0 0 0 20px;
 }
 
@@ -160,6 +160,11 @@ footer>.container>.row{
   margin-left: -40px;
   margin-right: -40px;
 }
-/*.about-img{
-  
-}*/
+
+.widget ul li .archive-sidebar-li{
+  margin-left:-25px;
+  margin-bottom:-5px;
+  list-style-type:circle;
+
+}
+
