@@ -6,7 +6,7 @@
 }
 .container {
   position:relative;
-  width:61.8%;
+  width:1170px;
   
 }
 
@@ -19,6 +19,7 @@
   padding-left: 5.5%;
   padding-right:5.5%;
   margin-bottom:20px;
+  margin-top:80px;
 }
 
 .shadow-container-index{
@@ -30,7 +31,7 @@
   padding-left: 5.5%;
   padding-right:5.5%;
   margin-bottom:20px;
-
+  margin-top:80px;
 }
 
 .sidebar{
@@ -38,17 +39,12 @@
     padding-left: 30px;
 }
 
-.section{
-	padding-top:100px;
-}
 
 .widget {
   margin-bottom:70px;
 }
 
-.archive-content{
-	width:61.8%;
-}
+
 
 footer a.toTop {
   position:absolute;

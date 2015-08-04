@@ -16,7 +16,7 @@
  **************************************************************** **/
  body {
   color: #333;
-  font-family:'Open Sans', sans-serif;
+  font-family:"Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "STHeiti", "WenQuanYi Micro Hei", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 300;
@@ -117,7 +117,7 @@ header p {
   padding:0;
 }
 section {
-  padding-top:100px;
+  padding-top:80px;
   
 }
 section header p {
