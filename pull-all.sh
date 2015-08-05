@@ -15,5 +15,7 @@ cd ../myBlog
 cp -rf .git output
 cd output
 git pull
-cp -rf .git ..
+cd ..
+rm -rf .git
+mv  ./output/.git  ..
 

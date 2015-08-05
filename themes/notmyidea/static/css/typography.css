@@ -191,6 +191,7 @@ a:hover {
   position:relative;
   color:#AAAE99;
   padding-top: 18px;
+  margin-bottom:0px;
 }
 
 .pagination>li>a{
