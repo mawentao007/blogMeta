@@ -5,7 +5,7 @@ Tags:目录,小工具
 
 #Na 目录切换工具“哪”
 
-[地址](http://https://github.com/mawentao007/na)
+[地址](https://github.com/mawentao007/na)
 <p align="center">
 <img class="embeded-img" src="/images/na.jpg">
 </p>
