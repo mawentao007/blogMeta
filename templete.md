@@ -8,7 +8,7 @@ Tags:NIO,教程,JAVA
 *english*
 
 <p align="center">
-<img class="embeded-img" src="http://scalaboy.top/images">
+<img class="embeded-img" src="/images">
 </p>
 <p align="center">
 **Java NIO：通道读数据到缓冲区，缓冲区写数据到通道**
