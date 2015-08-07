@@ -56,7 +56,7 @@ shell中的函数的参数列表中没有内容，参数传递在调用过程中
     	else
     fi
  
- 两点注意，一是匹配时候要用双中括号，二是注意'*'的使用。
+ 两点注意，一是匹配时候要用双中括号，二是注意“*” 的使用。
  
 <h4>&#9734;&nbsp;目录检查</h4>
 
@@ -81,6 +81,48 @@ shell中的函数的参数列表中没有内容，参数传递在调用过程中
     	echo $file
     done
     
+<h4>&#9734;&nbsp;管道</h4>
+
+	command1  [ | or |& ] command2
+
+其中*'|&'*表示将第一个命令的标准输出连同错误都作为第二个命令的标准输入。
+<hr>
+
+<h4>&#9734;&nbsp;&结尾</h4>
+
+'&' 结尾的命令，shell将会在子shell中异步执行相应的命令，也就是通常说的“后台执行”。
+
+<hr>
+<h4>&#9734;&nbsp;循环</h4>
+
+until
+
+	until test-commands;
+    do   
+          commands;
+    done
+
+
+while
+	
+    while test-commands; 
+    do 
+    	consequent-commands; 
+    done
+
+for
+
+	for name [ [in [words …] ] ; ] 
+    do 
+    	commands; 
+    done
+    
+    for (( expr1 ; expr2 ; expr3 )) ;
+   	do 
+    	commands ; 
+    done
+
+*break* and *continue*用法类似c语言的用法，可以在循环中起到控制作用。
 <h4>&#9734;&nbsp;参考资料</h4>
 <a href = “http://www.gnu.org/software/bash/manual/bashref.html”>
 http://www.gnu.org/software/bash/manual/bashref.html
