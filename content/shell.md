@@ -10,6 +10,7 @@ Tags:shell
     do
              echo "$line"
     done < $FILE
+<hr>
 
 <h4>&#9734;&nbsp;判断参数个数</h4>
 	
@@ -17,6 +18,7 @@ Tags:shell
     elif [];then
     else
     fi
+<hr>
 
 <h4>&#9734;&nbsp;shell函数定义及调用</h4>
 
@@ -33,6 +35,7 @@ shell中的函数的参数列表中没有内容，参数传递在调用过程中
 	myFun arg1 arg2
 
 注意在函数调用的时候不要加"()"。
+<hr>
 
 <h4>&#9734;&nbsp;shell函数进阶</h4>
 
@@ -49,7 +52,8 @@ shell中的函数的参数列表中没有内容，参数传递在调用过程中
 如果要移除上下文中的函数，方法如下：
 
 	$ unset function_name
-    
+<hr>
+   
 <h4>&#9734;&nbsp;简单的名称匹配</h4>
 
 	if  [[ $key = $1* ]];then
@@ -57,6 +61,7 @@ shell中的函数的参数列表中没有内容，参数传递在调用过程中
     fi
  
  两点注意，一是匹配时候要用双中括号，二是注意“*” 的使用。
+<hr>
  
 <h4>&#9734;&nbsp;目录检查</h4>
 
@@ -73,6 +78,7 @@ shell中的函数的参数列表中没有内容，参数传递在调用过程中
     if [ -L "$DIRECTORY" ]; then
   		# Control will enter here if $DIRECTORY is symbolic link.
 	fi
+<hr>
     
 <h4>&#9734;&nbsp;简单ls功能</h4>
 	
@@ -80,6 +86,7 @@ shell中的函数的参数列表中没有内容，参数传递在调用过程中
     do 
     	echo $file
     done
+<hr>
     
 <h4>&#9734;&nbsp;管道</h4>
 
@@ -95,7 +102,7 @@ shell中的函数的参数列表中没有内容，参数传递在调用过程中
 <hr>
 <h4>&#9734;&nbsp;循环</h4>
 
-until
+**until**
 
 	until test-commands;
     do   
@@ -103,14 +110,14 @@ until
     done
 
 
-while
+**while**
 	
     while test-commands; 
     do 
     	consequent-commands; 
     done
 
-for
+**for**
 
 	for name [ [in [words …] ] ; ] 
     do 
@@ -123,6 +130,68 @@ for
     done
 
 *break* and *continue*用法类似c语言的用法，可以在循环中起到控制作用。
+<hr>
+
+<h4>&#9734;&nbsp;分支结构</h4>
+
+**if**
+```
+if test-commands; then
+  consequent-commands;
+[elif more-test-commands; then
+  more-consequents;]
+[else alternate-consequents;]
+fi
+```
+
+**case** 这个结构略微复杂一点，格式和示例如下：
+
+	case word in [ [(] pattern [| pattern]…) command-list ;;]… esac
+
+    echo -n "Enter the name of an animal: "
+	read ANIMAL
+	echo -n "The $ANIMAL has "
+	case $ANIMAL in
+  	horse | dog | cat) echo -n "four";;
+  	man | kangaroo ) echo -n "two";;
+  	*) echo -n "an unknown number of";;
+	esac
+	echo " legs."
+    
+其中必须注意的是，每个分支结尾用‘;;’，表示一旦某一个分支匹配成功就不再继续匹配；‘;&’表示对紧随当前分支的下一个分支的命令也同时执行；‘;;&’表示需要检查下一个分支是否匹配，匹配的话执行相应命令。
+
+**select**
+
+	select name [in words …]; do commands; done
+    
+    eg.
+    select fname in *;
+	do
+		echo  $fname \($REPLY\)
+	break;
+	done
+    
+根据用户输入选项，从若干个选项中选择一个，将值赋给name。例子中$REPLY表示用户的输入。备选项可以由命令行输入，用$@读取。例子表示从当前目录的文件中选择一个，打印出所选的文件名和所选项。
+	
+**（（...））**
+
+	(( expression ))  等同于
+    let "expression"
+    
+    eg.
+    if (( 1 + 2 )) ;    //if let "1 + 2";
+	then                                                                            
+        echo "true"
+	fi
+计算括号中表达式的值，根据值是否为０返回０或者１，参见例题。要注意括号内侧的两个空格。
+
+**[[...]]**
+	
+    [[ expression ]]
+    
+根据表达式的真假值返回０或者１。这个用法比较复杂，可以用来进行模式匹配的相关判断，参见http://www.gnu.org/software/bash/manual/bashref.html#Looping-Constructs。
+<hr>
+
 <h4>&#9734;&nbsp;参考资料</h4>
 <a href = “http://www.gnu.org/software/bash/manual/bashref.html”>
 http://www.gnu.org/software/bash/manual/bashref.html
