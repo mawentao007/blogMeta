@@ -17,5 +17,5 @@ cd output
 git pull
 cd ..
 rm -rf .git
-mv  ./output/.git  ..
+mv  ./output/.git  .
 
