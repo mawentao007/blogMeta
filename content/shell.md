@@ -192,6 +192,36 @@ fi
 根据表达式的真假值返回０或者１。这个用法比较复杂，可以用来进行模式匹配的相关判断，参见http://www.gnu.org/software/bash/manual/bashref.html#Looping-Constructs。
 <hr>
 
+<h4>&#9734;&nbsp;数组</h4>
+
+```
+declare -a arr   #声明数组，可以省略。
+for (( i=0;i<10;i++ )); 
+do
+        arr[$i]=$i
+done
+for (( i=0;i<10;i++ )); 
+do
+        echo ${arr[$i]}
+done
+```
+<hr>
+
+<h4>&#9734;&nbsp;简单读取</h4>
+
+&#9723;&nbsp;**ReadArray**
+从文件中读取数据存入数组中。
+
+	readarray x < $FILE                                             
+    echo ${x[0]}
+
+&#9723;&nbsp;**Read**
+可以从文件或者标准输入读取数据，注意一次读取的默认也是一整行，其它模式参见相关文档。
+
+	read x                                              
+    echo $x
+<hr>
+
 <h4>&#9734;&nbsp;参考资料</h4>
 <a href = “http://www.gnu.org/software/bash/manual/bashref.html”>
 http://www.gnu.org/software/bash/manual/bashref.html
