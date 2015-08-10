@@ -4,7 +4,6 @@ Category: 技术文章
 Tags:NIO,教程,JAVA
 
 选择器(selector)是Java NIO中的重要组件，负责监控一个或者多个通道的状态，并且决定相关通道是否准备好读写操作。通过这种方式，一个线程可以管理多个通道，也就是管理多个网络连接。
-
 <hr>
 
 <h4>&#9734;&nbsp;为什么使用选择器</h4>
@@ -26,7 +25,7 @@ Tags:NIO,教程,JAVA
 
 	Selector selector = Selector.open();
 
-</hr>
+<hr>
 
 <h4>&#9734;&nbsp;将通道注册到选择器</h4>
 
@@ -56,28 +55,28 @@ Tags:NIO,教程,JAVA
 
 	int interestSet = SelectionKey.OP_READ | SelectionKey.OP_WRITE; 
     
-</hr>
+<hr>
 <h4>&#9734;&nbsp;选择关键字</h4>
 
 	
 
-</hr>
+<hr>
 
 <h4>&#9734;&nbsp;通过选择器选择通道</h4>
 
 
-</hr>
+<hr>
 
 <h4>&#9734;&nbsp;唤醒</h4>
 
 
-</hr>
+<hr>
 <h4>&#9734;&nbsp;关闭</h4>
 
 
-</hr>
+<hr>
 
 <h4>&#9734;&nbsp;完整事例</h4>
 
 
-</hr>
+<hr>
