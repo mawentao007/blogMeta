@@ -13,6 +13,15 @@
       {% include 'article_infos.html' %}
       {{ article.content }}
     </div><!-- /.entry-content -->
+    <div class="share">
+      <span>分享到</span>
+      <div class="share-group">
+      <a class="weibo" href="http://share.baidu.com/s?type=text&amp;searchPic=1&amp;sign=on&amp;to=tsina&amp;url={{ SITEURL }}/{{ article.url }}&amp;title={{article.title}}&amp;key=595885820" ref="nofollow" target="_blank">
+        <i class="fa-weibo">
+        </i>
+      </a>
+      </div>
+    </div>
     {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
     <div class="comments">
       <div id="disqus_thread"></div>
