@@ -234,5 +234,7 @@ a:hover {
   margin-bottom: 10px;
 }
 
-
+body.dark .nav>ul>li>a:hover, body.dark .nav>ul>li>div>a:hover{
+  color:#000;
+}
  
