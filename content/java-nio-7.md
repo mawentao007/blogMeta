@@ -3,6 +3,7 @@ Date: 2015-8-10
 Category: 技术文章
 Tags:NIO,教程,JAVA
 
+<a href=“http://tutorials.jenkov.com/java-nio/selectors.html”>原文链接</a>
 选择器(selector)是Java NIO中的重要组件，负责监控一个或者多个通道的状态，并且决定相关通道是否准备好读写操作。通过这种方式，一个线程可以管理多个通道，也就是管理多个网络连接。
 <hr>
 
@@ -58,11 +59,79 @@ Tags:NIO,教程,JAVA
 <hr>
 <h4>&#9734;&nbsp;选择关键字</h4>
 
-	
+正如前面所介绍的，当用户利用register()注册通道到选择器，姜宏返回一个SelectionKey对象。这个SelectionKey对象包含一系列有意思的属性：
 
++	The interest set
++	The ready set
++	The Channel
++	The Selector
++	An attached object (optional)
+
+下面将会介绍这些属性。
+
+**Interest Set**
+
+这个集合包含一系列“选择”过程中的事件，用户可以通过SelectionKey来读写这个集合。
+```
+int interestSet = selectionKey.interestOps();
+
+boolean isInterestedInAccept  = interestSet & SelectionKey.OP_ACCEPT;
+boolean isInterestedInConnect = interestSet & SelectionKey.OP_CONNECT;
+boolean isInterestedInRead    = interestSet & SelectionKey.OP_READ;
+boolean isInterestedInWrite   = interestSet & SelectionKey.OP_WRITE; 
+```
+可以通过"&"符号近线筛选来找出集合中的事件。
+
+**Ready Set**
+
+这个集合包含通道已经就绪的事件，用户可以通过selection操作来获取这个事件集合：
+
+	int readySet = selectionKey.readyOps();
+    
+除了之前介绍的测试事件的AND方法，也可以通过如下的方法测试，返回一个布尔值:
+
+```
+selectionKey.isAcceptable();
+selectionKey.isConnectable();
+selectionKey.isReadable();
+selectionKey.isWritable();
+```
+
+**Channel + Selector**
+通过SelectionKey访问channel + selector很容易，如下：
+	
+    Channel  channel  = selectionKey.channel();
+	Selector selector = selectionKey.selector(); 
+
+**Attaching Objects**
+
+用户可以通过将一个对象附着到一个SelectionKey来识别通道，或者添加更多信息到通道。例如，用户可以将channel和对应的buffer组合到一起，或者和一个集成更多信息的对象组合：
+
+	selectionKey.attach(theObject);
+
+	Object attachedObj = selectionKey.attachment();
+    
+也可以在注册Channel到Selector时将要附着的对象作为参数传递给register()：
+	
+    SelectionKey key = channel.register(selector, SelectionKey.OP_READ, theObject);
+    
 <hr>
 
 <h4>&#9734;&nbsp;通过选择器选择通道</h4>
+
+注册一个或者多个channel到selector之后就可以调用一种select()方法，这些方法用来返回已经触发并且用户感兴趣的事件所对应的通道（connect,accept,read or write)。如下有几种select()方法：
+
++	int select()
++	int select(long timeout)
++	int selectNow()
+
+select()阻塞，直到一个通道触发一个注册过的事件；
+
+select(long timeout),基本同上，有一个等待时长；
+
+selectNow()非阻塞，立刻返回。
+
+select()方法返回的int值表示已经就绪的channel个数，也就是两次调用select()之间就绪的通道个数。如果用户调用select(),返回1因为有一个channel就绪，这时再次调用select()，又有一个channel就绪，这时返回的还是1。如果这时没有处理第一个就绪的channel，那么这时候有两个channel都就绪。
 
 
 <hr>
@@ -80,3 +149,4 @@ Tags:NIO,教程,JAVA
 
 
 <hr>
+
