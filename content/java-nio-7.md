@@ -3,7 +3,7 @@ Date: 2015-8-10
 Category: 技术文章
 Tags:NIO,教程,JAVA
 
-<a href=“http://tutorials.jenkov.com/java-nio/selectors.html”>原文链接</a>
+<a href=http://tutorials.jenkov.com/java-nio/selectors.html>原文链接</a>
 
 选择器(selector)是Java NIO中的重要组件，负责监控一个或者多个通道的状态，并且决定相关通道是否准备好读写操作。通过这种方式，一个线程可以管理多个通道，也就是管理多个网络连接。
 <hr>
