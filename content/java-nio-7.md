@@ -126,15 +126,54 @@ selectionKey.isWritable();
 +	int select(long timeout)
 +	int selectNow()
 
-select()阻塞，直到一个通道触发一个注册过的事件；
+*select()* 阻塞，直到一个通道触发一个注册过的事件；
 
-select(long timeout),基本同上，有一个等待时长；
+*select(long timeout)*,基本同上，有一个等待时长；
 
-selectNow()非阻塞，立刻返回。
+*selectNow()*非阻塞，立刻返回。
 
 select()方法返回的int值表示已经就绪的channel个数，也就是两次调用select()之间就绪的通道个数。如果用户调用select(),返回1因为有一个channel就绪，这时再次调用select()，又有一个channel就绪，这时返回的还是1。如果这时没有处理第一个就绪的channel，那么这时候有两个channel都就绪。
 
+*selectedKeys()*
 
+一旦用户唤醒其中一个select()方法，返回值预示着一个或者多个channels已经准备好了，用户可以通过“selected key set”访问这些channel。访问的方法是调用selectedKeys()，如下：
+
+	Set<SelectionKey> selectedKeys = selector.selectedKeys(); 
+    
+当用户通过Channel.register()将channel注册到selector，该方法返回一个SelectionKey对象。这个key表示相关通道已经注册到了某个selector。用户通过selectedKeySet()方法访问的就是这些key。
+
+可以通过迭代器访问这些已经准备好的channel：
+```
+Set<SelectionKey> selectedKeys = selector.selectedKeys();
+
+Iterator<SelectionKey> keyIterator = selectedKeys.iterator();
+
+while(keyIterator.hasNext()) {
+    
+    SelectionKey key = keyIterator.next();
+
+    if(key.isAcceptable()) {
+        // a connection was accepted by a ServerSocketChannel.
+
+    } else if (key.isConnectable()) {
+        // a connection was established with a remote server.
+
+    } else if (key.isReadable()) {
+        // a channel is ready for reading
+
+    } else if (key.isWritable()) {
+        // a channel is ready for writing
+    }
+
+    keyIterator.remove();
+}
+```
+
+这个循环迭代访问selected key set中的keys。对于每个key，测试相关事件是否有通道已经就绪。
+
+注意keyIterator.remove()调用。Selector不会主动移出SelectionKey实例，需要用户在处理完channel之后手动移出。下一次通道就绪，选择器会再次将响应的key加入到selected key set。
+
+channel通过SelectionKey.channel()方法返回，这个channel就是要处理的channel。
 <hr>
 
 <h4>&#9734;&nbsp;唤醒</h4>
