@@ -178,14 +178,59 @@ channel通过SelectionKey.channel()方法返回，这个channel就是要处理�
 
 <h4>&#9734;&nbsp;唤醒</h4>
 
+调用select()方法的线程被阻塞，不过利用Selector.wakeup()方法，即使没有channel准备就绪，也可以使其脱离阻塞状态。不过该方法需要通过另一个线程进行调用，调用之后被阻塞的线程会立刻返回。
+
+如果没有线程被阻塞，也就是没有唤醒任何线程，那么下一个调用select()的线程会被立刻唤醒。
+
 
 <hr>
 <h4>&#9734;&nbsp;关闭</h4>
 
+调用Selector.close()方法可以立刻关闭Selector，该方法会使所有注册到相应Selector的SelectionKey实例失效，但是channel不会被关闭。
+
 
 <hr>
 
-<h4>&#9734;&nbsp;完整事例</h4>
+<h4>&#9734;&nbsp;完整示例</h4>
+
+```
+Selector selector = Selector.open();
+
+channel.configureBlocking(false);
+
+SelectionKey key = channel.register(selector, SelectionKey.OP_READ);
+
+while(true) {
+
+  int readyChannels = selector.select();
+
+  if(readyChannels == 0) continue;
+
+  Set<SelectionKey> selectedKeys = selector.selectedKeys();
+
+  Iterator<SelectionKey> keyIterator = selectedKeys.iterator();
+
+  while(keyIterator.hasNext()) {
+
+    SelectionKey key = keyIterator.next();
+
+    if(key.isAcceptable()) {
+        // a connection was accepted by a ServerSocketChannel.
+
+    } else if (key.isConnectable()) {
+        // a connection was established with a remote server.
+
+    } else if (key.isReadable()) {
+        // a channel is ready for reading
+
+    } else if (key.isWritable()) {
+        // a channel is ready for writing
+    }
+
+    keyIterator.remove();
+  }
+}
+```
 
 
 <hr>
