@@ -6,7 +6,6 @@ Tags:NIO,教程,JAVA
 <a href=http://tutorials.jenkov.com/java-nio/selectors.html>原文链接</a>
 
 选择器(selector)是Java NIO中的重要组件，负责监控一个或者多个通道的状态，并且决定相关通道是否准备好读写操作。通过这种方式，一个线程可以管理多个通道，也就是管理多个网络连接。
-<hr>
 
 <h4>&#9734;&nbsp;为什么使用选择器</h4>
 
@@ -20,14 +19,12 @@ Tags:NIO,教程,JAVA
 	<img class=embeded-img src="./images/overview-selectors.png">
 </p>
 
-<hr>
 
 <h4>&#9734;&nbsp;创建选择器</h4>
 
 
 	Selector selector = Selector.open();
 
-<hr>
 
 <h4>&#9734;&nbsp;将通道注册到选择器</h4>
 
@@ -57,7 +54,6 @@ Tags:NIO,教程,JAVA
 
 	int interestSet = SelectionKey.OP_READ | SelectionKey.OP_WRITE; 
     
-<hr>
 <h4>&#9734;&nbsp;选择关键字</h4>
 
 正如前面所介绍的，当用户利用register()注册通道到选择器，姜宏返回一个SelectionKey对象。这个SelectionKey对象包含一系列有意思的属性：
@@ -116,7 +112,6 @@ selectionKey.isWritable();
 	
     SelectionKey key = channel.register(selector, SelectionKey.OP_READ, theObject);
     
-<hr>
 
 <h4>&#9734;&nbsp;通过选择器选择通道</h4>
 
@@ -174,7 +169,6 @@ while(keyIterator.hasNext()) {
 注意keyIterator.remove()调用。Selector不会主动移出SelectionKey实例，需要用户在处理完channel之后手动移出。下一次通道就绪，选择器会再次将响应的key加入到selected key set。
 
 channel通过SelectionKey.channel()方法返回，这个channel就是要处理的channel。
-<hr>
 
 <h4>&#9734;&nbsp;唤醒</h4>
 
@@ -183,13 +177,11 @@ channel通过SelectionKey.channel()方法返回，这个channel就是要处理�
 如果没有线程被阻塞，也就是没有唤醒任何线程，那么下一个调用select()的线程会被立刻唤醒。
 
 
-<hr>
 <h4>&#9734;&nbsp;关闭</h4>
 
 调用Selector.close()方法可以立刻关闭Selector，该方法会使所有注册到相应Selector的SelectionKey实例失效，但是channel不会被关闭。
 
 
-<hr>
 
 <h4>&#9734;&nbsp;完整示例</h4>
 
@@ -233,5 +225,4 @@ while(true) {
 ```
 
 
-<hr>
 
