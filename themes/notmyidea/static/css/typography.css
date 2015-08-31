@@ -132,7 +132,8 @@ section header p {
   padding:0;
 }
 section article {
-  margin-bottom:40px;
+  margin-top: 25px;
+  margin-left: 25px;
 
 }
 section article:last-child {
