@@ -5,7 +5,6 @@ Tags:NIO,教程,JAVA
 
 Java NIO可以实现通道之间直接通信，前提是其中一个通道是FileChannel。FileChannel有两个方法可以利用：transferTo()和transferFrom()。
 
-<hr>
 
 <h4>&#9734;&nbsp;transferFrom()</h4>
 
@@ -26,7 +25,6 @@ toChannel.transferFrom(fromChannel, position, count);
 
 特别指出的是，某些SocketChannel的实现只传输当前已经准备就绪的数据---即使SocketChannel在随后有更多的数据可用，也不会继续传输。因此，从SocketChannel到FileChannel中传输的数据量可能不是整个请求(count)的量。
     
-<hr>
 
 <h4>&#9734;&nbsp;transferTo()</h4>
 
