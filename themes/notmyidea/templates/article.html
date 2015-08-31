@@ -22,6 +22,7 @@
       </a>
       </div>
     </div>
+
     <!-- {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
     <div class="comments">
       <div id="disqus_thread"></div>
@@ -38,18 +39,8 @@
       <noscript>Please enable JavaScript to view the comments.</noscript>
     </div>
     {% endif %} -->
+
     <div class="ds-thread" data-thread-key='{{article.title}}' data-title='{{article.title}}' data-url= '{{ SITEURL }}/{{ article.url }}'></div>
-    <script type="text/javascript">
-      var duoshuoQuery = {short_name:"marvin007"};
-      (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0] 
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-      })();
-    </script>
 
   </article>
 </section>
