@@ -7,7 +7,6 @@
 }
 .container {
   position:relative;
-  width:1170px;
   
 }
 
@@ -20,7 +19,7 @@
   margin-bottom:20px;
   margin-top:80px;
   background-color: #fff;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 .shadow-container-index{

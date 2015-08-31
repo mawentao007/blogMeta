@@ -4,23 +4,23 @@
 {% block content %}
    
 <div class = "container  shadow-container">
+<section class="about">
+	<header class="text-center">
+	<h2>Archive</h2>
+	</header>
+	{% for year, date_year in dates|groupby( 'date.year' )|reverse %}
+	<h3>{{ year }}</h3>
+		{% for month, articles in date_year|groupby( 'date.month' )|reverse %}
+		<dl>{% for article in articles %}
+    		<dd><i class="fa fa-rocket"></i><a class="theme_link " href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+         	<span class=" archive-date">{{ article.date.strftime('%d') }} {{ article.date.strftime('%B')[:3] }}</span>
+        	</dd>
+			{% endfor %}
+		{% endfor %}
+	{% endfor %}
 
-<header class="text-center">
-	<p />
-	<br><h2>Archive</h2>
-</header>
-{% for year, date_year in dates|groupby( 'date.year' )|reverse %}
-<h3>{{ year }}</h3>
-{% for month, articles in date_year|groupby( 'date.month' )|reverse %}
-<dl>{% for article in articles %}
-    <dd><i class="fa fa-rocket"></i><a class="theme_link " href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
-          <span class=" archive-date">{{ article.date.strftime('%d') }} {{ article.date.strftime('%B')[:3] }}</span>
-              </dd>
-{% endfor %}
-{% endfor %}
-{% endfor %}
-
-</dl>
+		</dl>
+</section>
 </div>
 
 {% endblock content %}

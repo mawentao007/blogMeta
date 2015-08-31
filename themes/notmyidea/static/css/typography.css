@@ -92,6 +92,12 @@ blockquote p {
   margin-bottom:20px;
   /* footer fixed = 0 */
 }
+
+section.body{
+  margin-top:6%;
+  margin-left: 6%;
+  margin-right:6%;
+}
 section header p {
   font-family:'Dosis';
 }
@@ -123,8 +129,10 @@ p {
 header p {
   padding:0;
 }
-section {
-  padding-top:80px;
+section.about {
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
   
 }
 section header p {
@@ -187,7 +195,7 @@ a:hover {
   background-color: #ffffff;
   padding: 20px;
   box-shadow: 1px 6px 6px rgb(2, 2, 2);
-  border-radius:15px;
+  border-radius:10px;
   background-image: url("../images/content-bg.png")
 }
 
@@ -265,4 +273,8 @@ body.dark .nav>ul>li>a:hover, body.dark .nav>ul>li>div>a:hover{
 
 dd>a.theme_link{
   color:rgba(13, 14, 14, 0.89);
+}
+
+dl{
+  margin-bottom:45px;
 }
