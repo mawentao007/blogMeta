@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}{{ article.title|striptags }}{% endblock %}
+{% block content %}
+<div class="container shadow-container">
+<section id="content" class="body">
+  <article>
+    <header>
+      <h3 class="entry-title">{{ article.title }}</h3>
+      {% include 'twitter.html' %}
+    </header>
+
+    <div class="entry-content">
+      {% include 'article_infos.html' %}
+      {{ article.content }}
+    </div><!-- /.entry-content -->
+    <div class="share">
+      <span>分享到</span>
+      <div class="share-group">
+      <a class="weibo" href="http://share.baidu.com/s?type=text&amp;searchPic=1&amp;sign=on&amp;to=tsina&amp;url={{ SITEURL }}/{{ article.url }}&amp;title={{article.title}}&amp;key=595885820" ref="nofollow" target="_blank">
+        <i class="fa fa-weibo">
+        </i>
+      </a>
+      </div>
+    </div>
+    <!-- {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
+    <div class="comments">
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname = '{{ DISQUS_SITENAME }}';
+        var disqus_identifier = '{{ article.url }}';
+        var disqus_url = '{{ SITEURL }}/{{ article.url }}';
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//{{ DISQUS_SITENAME }}.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the comments.</noscript>
+    </div>
+    {% endif %} -->
+    <div class="ds-thread" data-thread-key='{{article.title}}' data-title='{{article.title}}' data-url= '{{ SITEURL }}/{{ article.url }}'></div>
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"marvin007"};
+      (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] 
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script>
+
+  </article>
+</section>
+</div>
+{% endblock %}

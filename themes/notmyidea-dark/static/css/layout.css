@@ -1,7 +1,7 @@
  html, body {
   overflow-x:hidden;
   overflow-x:hidden;
-/*  background:#000000 url(../images/bg-wood-004.png);*/
+  background:#000000 url(../images/body-bg-dark.jpg);
   background-repeat: no-repeat;
   background-size:contain;
 }
@@ -13,24 +13,22 @@
 
 .shadow-container{
   width:70%;
-/*  -webkit-box-shadow: 0px 0px 15px 1px rgba(50, 50, 50, 1); 
+  -webkit-box-shadow: 0px 0px 15px 1px rgba(50, 50, 50, 1); 
   -moz-box-shadow: 0px 0px 15px 1px rgba(50, 50, 50, 1);
-  box-shadow: 0px 0px 15px 1px rgba(50, 50, 50, 1);*/
+  box-shadow: 0px 0px 15px 1px rgba(50, 50, 50, 1);
   background: url(../images/content-bg.png) repeat top;
   padding-left: 5.5%;
   padding-right:5.5%;
   margin-bottom:20px;
   margin-top:80px;
-  background-color: #fff;
-  border-radius: 15px;
 }
 
 .shadow-container-index{
   width:70%;
-/*  -webkit-box-shadow: 0px 0px 15px 1px rgba(50, 50, 50, 1); 
+  -webkit-box-shadow: 0px 0px 15px 1px rgba(50, 50, 50, 1); 
   -moz-box-shadow: 0px 0px 15px 1px rgba(50, 50, 50, 1);
-  box-shadow: 0px 0px 15px 1px rgba(50, 50, 50, 1);*/
-  /*background: url(../images/content-bg-index.png) repeat top;*/
+  box-shadow: 0px 0px 15px 1px rgba(50, 50, 50, 1);
+  background: url(../images/content-bg-index.png) repeat top;
   padding-left: 5.5%;
   padding-right:5.5%;
   margin-bottom:20px;
@@ -76,7 +74,6 @@ footer a.toTop {
 .widget ul li {
   margin:10px 0;
   list-style:none;
-  color:rgba(255, 255, 255, 0.7);
 }
 
 .widget ul{
@@ -87,7 +84,6 @@ footer a.toTop {
 
 .widget h3 {
   margin-bottom:20px;
-  color:rgba(243, 221, 186, 0.61);
 }
 
 .widget ul li a i {
@@ -174,13 +170,3 @@ footer>.container>.row{
   font-size:14px;
 
 }
-
-.main-bg {
-  width:100%;
-  height: 100%;
-  position: fixed;
-  background-repeat: repeat;
-  background-image: url("../images/bg-wood-002.png");
-}
-
-

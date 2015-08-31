@@ -1,8 +1,9 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+{% include "_includes/header.html" %}
 
-{% block content_title %}{% endblock %}
-{% block content %}
-
+<body id="index" class="home">
+{% include "_includes/nav.html" %}
 <div class="container shadow-container">
 	<section class="about">
     <!--p  align="center">
@@ -34,10 +35,13 @@
 
 
 </div>
-{% endblock content %}
+
 
 
     
 
+{% include "_includes/footer.html" %}
 
-
+{% include 'analytics.html' %}
+</body>
+</html>
