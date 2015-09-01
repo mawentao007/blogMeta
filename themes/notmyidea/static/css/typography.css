@@ -46,10 +46,12 @@ h3 {
   line-height: 30px;
 }
 
-article>header>h3{
+article>header>h4{
   font-weight: 600;
+  color:#000000;
 }
-h3>a{
+
+h4>a{
   color:rgba(15, 18, 19, 0.81);
 }
 h4 {
