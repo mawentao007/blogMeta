@@ -57,9 +57,24 @@ h4>a{
 h4 {
   font-size:24px;
   line-height: 24px;
-  color: rgba(0, 0, 0, 0.47);
+  color: rgba(0, 0, 0, 0.57);
   margin-bottom: 12px;
 }
+
+h5{
+  font-size:18px;
+  color:rgba(0,0,0,0.7);
+  font-style: italic;
+  font-weight: 600;
+}
+
+h6{
+  font-size:16px;
+  color:rgba(0,0,0,0.5);
+  font-weight: 700;
+
+}
+
 a, a:hover, a:focus {
   cursor: pointer;
   text-decoration:none;
@@ -209,7 +224,7 @@ a:hover {
 }
 
 .item:hover{
-  box-shadow: 1px 3px 3px rgba(229, 234, 208, 0.87);
+  box-shadow: 1px 3px 3px rgba(54, 200, 218, 0.87);
 }
 
 .item-title {
@@ -286,4 +301,10 @@ dd>a.theme_link{
 
 dl{
   margin-bottom:45px;
+}
+
+.embeded-img{
+  margin-left:20px;
+  margin-right:20px;
+  border-radius: 20px;
 }
