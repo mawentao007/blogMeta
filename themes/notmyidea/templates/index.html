@@ -7,14 +7,11 @@
 
 <section id="content" class="left col-md-9">
 {% for article in articles_page.object_list %}
-    <div class="item">
+    <div class="item" onclick="location.href='{{ SITEURL }}/{{ article.url }}'" style="cursor:pointer;">
         <article class="hentry">
             <header>
                 <h4>
-                    <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-                           title="Permalink to {{ article.title|striptags }}">
                            {{ article.title }}
-                    </a>
                 </h4>
             </header>
             <div class="entry-content index">
