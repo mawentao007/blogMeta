@@ -2,6 +2,7 @@ Title: Na目录切换工具"哪"
 Date: 2015-8-6
 Category: 个人项目
 Tags:目录,小工具
+Summary:个人定制cd命令的扩展工具，支持对目录添加别名进行切换。对于常用但是位置比较深的目录的索引有奇效。
 
 **[地址](https://github.com/mawentao007/na)**
 <p align="center">

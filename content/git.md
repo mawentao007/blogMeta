@@ -2,6 +2,7 @@ Title: Git开发模型简介
 Date: 2015-9-5
 Category: 技术文章
 Tags:Git
+Summary:这是一篇介绍git开发模型的文章，原文链接如上，略有删减，保留核心内容。
 
 <a href=http://nvie.com/posts/a-successful-git-branching-model>原文链接</a>
 
