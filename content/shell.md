@@ -222,6 +222,14 @@ done
     echo $x
 <hr>
 
+<h4>&#9734;&nbsp;按列截取文档</h4>
+
+截取相应列并返回截取的内容
+	
+    cut -d " " -f 3- input_filename > output_filename
+    -d  后面跟分隔符，默认tab
+    -f  选择内容段，按列索引，起始值为1，3-表示截取第三列及其之后的列，没有“-”则表示删除对应列。
+
 <h4>&#9734;&nbsp;参考资料</h4>
 <a href = “http://www.gnu.org/software/bash/manual/bashref.html”>
 http://www.gnu.org/software/bash/manual/bashref.html

@@ -3,6 +3,7 @@ Date: 2015-8-21
 Category: 随笔
 Tags:驾考
 Authors：Marvin
+Summary:晒了大半个月，黑了两圈，总算能考科二了。
 
 晒了大半个月，黑了两圈，总算能考科二了。
 

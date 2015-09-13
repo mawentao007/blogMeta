@@ -17,3 +17,6 @@ Authors：Marvin
 
 +	<a href=https://github.com/mitmproxy/mitmproxy>mitmproxy</a>: Python语言编写的http代理。
 
+<h4>&#9737;&nbsp;Html插件</h4>
+
++	<a href = https://www.mathjax.org> Mathjax </a>: html内嵌数学公式插件。
