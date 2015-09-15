@@ -45,7 +45,7 @@ while(buf.hasRemaining()) {
 
 ```
 
-注意while循环中*FileChannel.write()*的调用方式。因为*write()*方法写入文件通道的字节数无法确定，因此需要重复调用*write()*方法知道Buffer中没有可以进行写入的数据。
+注意while循环中*FileChannel.write()*的调用方式。因为*write()*方法写入文件通道的字节数无法确定，因此需要重复调用*write()*方法直到Buffer中没有可以进行写入的数据。
 
 <h4>&#9734;&nbsp;关闭文件通道</h4>
 
